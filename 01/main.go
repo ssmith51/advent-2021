@@ -49,8 +49,6 @@ func part1(depths []int) {
 func part2(depths []int) {
 	log.Println("Puzzle 2: Starting")
 
-	// var count, iterations, a1, a2, a3, b1, b2, b3, c1, c2, c3 int
-
 	lenDepts := len(depths) - 3
 
 	var i, count int
