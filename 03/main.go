@@ -10,6 +10,24 @@ import (
 
 var INPUT_FILE = "input.txt"
 
+func main() {
+	log.Println("Advent of Code - Day 3")
+	log.Println("----------------------")
+
+	fi, err := os.Open(INPUT_FILE)
+	handleError(err)
+	defer fi.Close()
+
+	report := readInput(fi)
+
+	part1(report)
+	log.Println("----------------------")
+
+	part2(report)
+	log.Println("----------------------")
+
+}
+
 func handleError(err error) {
 	if err != nil {
 		log.Fatalf("Error occured: %s", err.Error())
@@ -29,7 +47,7 @@ func readInput(fi *os.File) []string {
 	return report
 }
 
-//Puzzle #1 Entry
+// ------ Puzzle 1 ------
 func part1(report []string) {
 	log.Println("Puzzle 1: Starting")
 
@@ -82,6 +100,7 @@ func part1(report []string) {
 
 }
 
+// ------ Puzzle 2 ------
 func part2(report []string) {
 	log.Println("Puzzle 2: Starting")
 
@@ -170,22 +189,4 @@ func findValue(report []string, pos int, invert bool) byte {
 	}
 
 	return val
-}
-
-func main() {
-	log.Println("Advent of Code - Day 3")
-	log.Println("----------------------")
-
-	fi, err := os.Open(INPUT_FILE)
-	handleError(err)
-	defer fi.Close()
-
-	report := readInput(fi)
-
-	part1(report)
-	log.Println("----------------------")
-
-	part2(report)
-	log.Println("----------------------")
-
 }
