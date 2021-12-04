@@ -8,7 +8,14 @@ import (
 	"strings"
 )
 
-func LoadGame(fi *os.File) ([]int, []Board) {
+var INPUT_FILE = "input.txt"
+
+func LoadGame() ([]int, []Board) {
+
+	fi, err := os.Open(INPUT_FILE)
+	utils.HandleError(err)
+	defer fi.Close()
+
 	var boards []Board
 	var bingoNumbers []int
 

@@ -2,33 +2,23 @@ package main
 
 import (
 	"advent-04/game"
-	"advent-04/utils"
 	"log"
-	"os"
 )
-
-var INPUT_FILE = "input.txt"
 
 func main() {
 	log.Println("Advent of Code - Day 4")
 	log.Println("----------------------")
 
-	fi, err := os.Open(INPUT_FILE)
-	utils.HandleError(err)
-	defer fi.Close()
+	log.Println("Loading Game")
 
-	//Execute Part 1
-	part1(fi)
+	log.Println("Puzzle 1: Starting")
+	bingoNumbers1, boards1 := game.LoadGame()
+	game.RunGame(bingoNumbers1, boards1)
+	log.Println("----------------------")
 
-}
-
-func part1(fi *os.File) {
-
-	bingoNumbers, boards := game.LoadGame(fi)
-
-	log.Printf("Bingo Numbers: %v", bingoNumbers)
-	log.Printf("Number of Boards loaded: %d", len(boards))
-
-	game.RunGame(bingoNumbers, boards)
+	log.Println("Puzzle 2: Starting")
+	bingoNumbers2, boards2 := game.LoadGame()
+	game.RunGameLastWin(bingoNumbers2, boards2)
+	log.Println("----------------------")
 
 }

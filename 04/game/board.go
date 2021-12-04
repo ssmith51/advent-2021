@@ -35,7 +35,7 @@ func GenerateSpace(input string) Space {
 
 }
 
-func PrintBoard(board Board) {
+func PrintBoard(board *Board) {
 	for _, row := range board.rows {
 		var vals string
 		for _, space := range row.spaces {
