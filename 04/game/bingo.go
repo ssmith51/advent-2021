@@ -10,7 +10,6 @@ evalute:
 	for _, num := range bingoNumbers {
 		for boardIndex := range boards {
 			evaluteBoard(num, &boards[boardIndex])
-			checkWinConditions(&boards[boardIndex])
 			if boards[boardIndex].hasWon {
 				log.Printf("Board %d won with number %d:", boardIndex, num)
 				PrintBoard(&boards[boardIndex])
@@ -33,7 +32,6 @@ func RunGameLastWin(bingoNumbers []int, boards []Board) {
 			var won bool
 			if !boards[boardIndex].hasWon {
 				evaluteBoard(num, &boards[boardIndex])
-				checkWinConditions(&boards[boardIndex])
 				if boards[boardIndex].hasWon {
 					won = true
 				}
@@ -60,6 +58,8 @@ func evaluteBoard(num int, board *Board) {
 			}
 		}
 	}
+
+	checkWinConditions(board)
 
 }
 
