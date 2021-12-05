@@ -11,5 +11,7 @@ Once realized it took me a while to reset, and the constant reminder that a Grid
 Overall, I feel there should be an easier way to do this than my solution. Since we're essentially dealing with Vectors I assume there is a library out there I could pull in to solve this in much less code. 
 
 ## Puzzle 2
+Trig! It's been a while since I've looked at anything related to Trigonometry! Fortunately, this second portion was fairly easy. Since I had mistakenly coded for diagonals as part of the bingo puzzle I already had most of the logic ready to go. Again, the hardest part of the problem was the Y,X Multi Dimensonal slice and making sure the correct points were marked. 
 
 ## Summary
+This took me much longer than I anticpiated, however once I understood the expected outcome it was fairly easy to complete. Continuing with my logic, it feels like there should be an easier way to do this than Multi Dimensonal arrays and a bunch of loops...

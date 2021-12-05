@@ -5,7 +5,7 @@ import (
 	"log"
 )
 
-var INPUT_FILE = "test.txt"
+var INPUT_FILE = "input.txt"
 
 func main() {
 	log.Println("Advent of Code - Day 4")
@@ -16,6 +16,10 @@ func main() {
 
 	log.Println("Puzzle 1: Starting")
 	nav.Navigate(readings, true)
+	log.Println("----------------------")
+
+	log.Println("Puzzle 2: Starting")
+	nav.Navigate(readings, false)
 	log.Println("----------------------")
 
 }
