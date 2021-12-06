@@ -17,7 +17,7 @@ func main() {
 	calcFish(80, initFish)
 	log.Println("----------------------")
 
-	log.Println("Puzzle 1: Starting")
+	log.Println("Puzzle 2: Starting")
 	calcFish(256, initFish)
 	log.Println("----------------------")
 
