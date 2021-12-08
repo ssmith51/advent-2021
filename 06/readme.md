@@ -4,16 +4,16 @@ The sea floor is getting steeper. Maybe the sleigh keys got carried this way?
 A massive school of glowing lanternfish swims past. They must spawn quickly to reach such large numbers - maybe exponentially quickly? You should model their growth rate to be sure.
 
 ## Puzzle 1
-This one took me a few minutes to figure out. I decided to use a Multi Dimensonal Slice, which seemed to work well for me. 
+This seemed too easy, we have a bunch of fish, each fish counts down to 0 at which point we rotate that fish back to position 6 and create a new fish that starts counting down from 8 -> 0. When those new fish give birth at position 0 they go to position 6, and a new fish get created at 8, and so on. 
 
-The main issue I faced was in my interpertation of the problem (I'll blame that on being sleepy from Re:Invent). When I first started working on it I was missing the fact these were line segments and assumed you would count every number between coordinates. This was a fatal flaw and it wasn't till I finished what I thought was the correct solution did I realize it. 
+However, the word __exponentially__ stood out (was highlighted too). I guessed some type of hooked in the second puzzle would change, such as fush reproduce on different days and grow faster etc... 
 
-Once realized it took me a while to reset, and the constant reminder that a Grid is read in X,Y but a Mutli Dimensonal Slice is indexed via Y,X led to much head banging (again, I'll blame it on Re:Invent travel lag :) ).
+I thought about it some and realized all we care about are the number of fish per day in their 'cycle'. I mapped it out by the days in the cycle, some fish started at the 2nd day in the cycle, 3rd day, etc.. Then I started movving them closer to day 0 in the cyle, at which point they reproduce, set the count of the fish on day 8 to the number on day 0 and increase the number of fish on day 6 of the 'cycle' by the number of fish in day 0 of the 'cycle. 
 
-Overall, I feel there should be an easier way to do this than my solution. Since we're essentially dealing with Vectors I assume there is a library out there I could pull in to solve this in much less code. 
+The biggest I ran into was adding the new fish at day 6 & 8 after moving fish down the day cycle. I had to pull the number at the start then move them down. 
 
 ## Puzzle 2
-Trig! It's been a while since I've looked at anything related to Trigonometry! Fortunately, this second portion was fairly easy. Since I had mistakenly coded for diagonals as part of the bingo puzzle I already had most of the logic ready to go. Again, the hardest part of the problem was the Y,X Multi Dimensonal slice and making sure the correct points were marked. 
+Boom! Change the total number od days and this worked like a champ!
 
 ## Summary
-This took me much longer than I anticpiated, however once I understood the expected outcome it was fairly easy to complete. Continuing with my logic, it feels like there should be an easier way to do this than Multi Dimensonal arrays and a bunch of loops...
+The biggest part was figuring out how to not brute force this. I feel the last few I've been brute forcing them so I spent some time thinking about it. I thougt there would be some type of log factor I could use per fish in the initial list but there wasn't. It also helped that I was reading on Friday a lot of people saying future problems may run a long time and try to exhaust resources. The __exponential__ keyword hinted at that. 
